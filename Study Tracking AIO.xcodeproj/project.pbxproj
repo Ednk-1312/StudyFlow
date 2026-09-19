@@ -6,9 +6,63 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5D22A0163055A00000000016 /* StudyOSWidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 5D22A0053055A00000000005 /* StudyOSWidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5D22A0133055A00000000013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D21FFCD3054F19300F1E947 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D22A0063055A00000000006;
+			remoteInfo = StudyOSWidgetsExtension;
+		};
+		5D22A0173055A00000000017 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5D21FFCD3054F19300F1E947 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D21FFD43054F19300F1E947;
+			remoteInfo = "Study Tracking AIO";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5D22A0153055A00000000015 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5D22A0163055A00000000016 /* StudyOSWidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5D21FFD53054F19300F1E947 /* Study Tracking AIO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Study Tracking AIO.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D22A0053055A00000000005 /* StudyOSWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyOSWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D22A00E3055A0000000000E /* StudyOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5D22A0203055A00000000020 /* Exceptions for "WidgetKitExtension" folder in "StudyOSWidgetsExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5D22A0063055A00000000006 /* StudyOSWidgetsExtension */;
+		};
+		5D22A0213055A00000000021 /* Exceptions for "WidgetKitExtension" folder in "Study Tracking AIO" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Shared/WidgetSnapshot.swift,
+			);
+			target = 5D21FFD43054F19300F1E947 /* Study Tracking AIO */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		5D21FFD73054F19300F1E947 /* Study Tracking AIO */ = {
@@ -16,10 +70,38 @@
 			path = "Study Tracking AIO";
 			sourceTree = "<group>";
 		};
+		5D22A0013055A00000000001 /* WidgetKitExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5D22A0213055A00000000021 /* Exceptions for "WidgetKitExtension" folder in "Study Tracking AIO" target */,
+				5D22A0203055A00000000020 /* Exceptions for "WidgetKitExtension" folder in "StudyOSWidgetsExtension" target */,
+			);
+			path = WidgetKitExtension;
+			sourceTree = "<group>";
+		};
+		5D22A00A3055A0000000000A /* StudyOSUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = StudyOSUITests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5D21FFD23054F19300F1E947 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D22A0033055A00000000003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D22A00C3055A0000000000C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				5D21FFD73054F19300F1E947 /* Study Tracking AIO */,
+				5D22A0013055A00000000001 /* WidgetKitExtension */,
+				5D22A00A3055A0000000000A /* StudyOSUITests */,
 				5D21FFD63054F19300F1E947 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				5D21FFD53054F19300F1E947 /* Study Tracking AIO.app */,
+				5D22A0053055A00000000005 /* StudyOSWidgetsExtension.appex */,
+				5D22A00E3055A0000000000E /* StudyOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,10 +141,12 @@
 				5D21FFD13054F19300F1E947 /* Sources */,
 				5D21FFD23054F19300F1E947 /* Frameworks */,
 				5D21FFD33054F19300F1E947 /* Resources */,
+				5D22A0153055A00000000015 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5D22A0143055A00000000014 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				5D21FFD73054F19300F1E947 /* Study Tracking AIO */,
@@ -69,6 +157,51 @@
 			productName = "Study Tracking AIO";
 			productReference = 5D21FFD53054F19300F1E947 /* Study Tracking AIO.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5D22A0063055A00000000006 /* StudyOSWidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D22A0073055A00000000007 /* Build configuration list for PBXNativeTarget "StudyOSWidgetsExtension" */;
+			buildPhases = (
+				5D22A0023055A00000000002 /* Sources */,
+				5D22A0033055A00000000003 /* Frameworks */,
+				5D22A0043055A00000000004 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5D22A0013055A00000000001 /* WidgetKitExtension */,
+			);
+			name = StudyOSWidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = StudyOSWidgetsExtension;
+			productReference = 5D22A0053055A00000000005 /* StudyOSWidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5D22A00F3055A0000000000F /* StudyOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D22A0103055A00000000010 /* Build configuration list for PBXNativeTarget "StudyOSUITests" */;
+			buildPhases = (
+				5D22A00B3055A0000000000B /* Sources */,
+				5D22A00C3055A0000000000C /* Frameworks */,
+				5D22A00D3055A0000000000D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D22A0183055A00000000018 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5D22A00A3055A0000000000A /* StudyOSUITests */,
+			);
+			name = StudyOSUITests;
+			packageProductDependencies = (
+			);
+			productName = StudyOSUITests;
+			productReference = 5D22A00E3055A0000000000E /* StudyOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -82,6 +215,13 @@
 				TargetAttributes = {
 					5D21FFD43054F19300F1E947 = {
 						CreatedOnToolsVersion = 26.3;
+					};
+					5D22A0063055A00000000006 = {
+						CreatedOnToolsVersion = 26.3;
+					};
+					5D22A00F3055A0000000000F = {
+						CreatedOnToolsVersion = 26.3;
+						TestTargetID = 5D21FFD43054F19300F1E947;
 					};
 				};
 			};
@@ -100,12 +240,28 @@
 			projectRoot = "";
 			targets = (
 				5D21FFD43054F19300F1E947 /* Study Tracking AIO */,
+				5D22A0063055A00000000006 /* StudyOSWidgetsExtension */,
+				5D22A00F3055A0000000000F /* StudyOSUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5D21FFD33054F19300F1E947 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D22A0043055A00000000004 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D22A00D3055A0000000000D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +278,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D22A0023055A00000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D22A00B3055A0000000000B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D22A0143055A00000000014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D22A0063055A00000000006 /* StudyOSWidgetsExtension */;
+			targetProxy = 5D22A0133055A00000000013 /* PBXContainerItemProxy */;
+		};
+		5D22A0183055A00000000018 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5D21FFD43054F19300F1E947 /* Study Tracking AIO */;
+			targetProxy = 5D22A0173055A00000000017 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5D21FFDE3054F19500F1E947 /* Debug */ = {
@@ -246,20 +429,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Study Tracking AIO/Study Tracking AIO.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 372AL5TM6J;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyFlow;
+				INFOPLIST_KEY_NSCameraUsageDescription = "StudyOS uses the camera to photograph worksheets so their text can be extracted for review.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -270,7 +457,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.8;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Study-Tracking-AIO";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StudyFlow;
+				PrivacyPolicyURL = "";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -280,6 +468,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
+				SupportEmail = "";
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 26.2;
 			};
@@ -290,20 +479,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Study Tracking AIO/Study Tracking AIO.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 372AL5TM6J;
 				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyFlow;
+				INFOPLIST_KEY_NSCameraUsageDescription = "StudyOS uses the camera to photograph worksheets so their text can be extracted for review.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -314,7 +507,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 15.8;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Study-Tracking-AIO";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StudyFlow;
+				PrivacyPolicyURL = "";
 				REGISTER_APP_GROUPS = YES;
 				SDKROOT = auto;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -324,8 +518,125 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
+				SupportEmail = "";
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 26.2;
+			};
+			name = Release;
+		};
+		5D22A0083055A00000000008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WidgetKitExtension/StudyOSWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 372AL5TM6J;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WidgetKitExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Study-Tracking-AIO.widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D22A0093055A00000000009 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WidgetKitExtension/StudyOSWidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 372AL5TM6J;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WidgetKitExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Study-Tracking-AIO.widgets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5D22A0113055A00000000011 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 372AL5TM6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Study-Tracking-AIO.UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Study Tracking AIO";
+			};
+			name = Debug;
+		};
+		5D22A0123055A00000000012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 372AL5TM6J;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Study-Tracking-AIO.UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Study Tracking AIO";
 			};
 			name = Release;
 		};
@@ -346,6 +657,24 @@
 			buildConfigurations = (
 				5D21FFE13054F19500F1E947 /* Debug */,
 				5D21FFE23054F19500F1E947 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D22A0073055A00000000007 /* Build configuration list for PBXNativeTarget "StudyOSWidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D22A0083055A00000000008 /* Debug */,
+				5D22A0093055A00000000009 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5D22A0103055A00000000010 /* Build configuration list for PBXNativeTarget "StudyOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D22A0113055A00000000011 /* Debug */,
+				5D22A0123055A00000000012 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

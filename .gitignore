@@ -1,0 +1,22 @@
+# Build artifacts
+.build/
+DerivedData/
+*.xcarchive
+*.ipa
+
+# macOS
+.DS_Store
+
+# Xcode user state
+xcuserdata/
+*.xcuserstate
+
+# AI tool metadata
+.freebuff/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+
+# Screenshots / local notes
+*.png
