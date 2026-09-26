@@ -56,9 +56,9 @@ public struct AddMaterialSheet: View {
                             Task {
                                 if let data = try? await newItem?.loadTransferable(type: Data.self) {
                                     selectedImageData = data
-                                    if let uiImage = UIImage(data: data) {
+                                    if let image = PlatformImage(data: data), let cgImage = image.cgImageOrNil {
                                         // Run on-device OCR text extraction for searchability!
-                                        let text = try? await DocumentScannerService.shared.recognizeText(from: uiImage)
+                                        let text = try? await DocumentScannerService.shared.recognizeText(from: cgImage)
                                         if let text = text, !text.isEmpty {
                                             noteContent = text
                                         }

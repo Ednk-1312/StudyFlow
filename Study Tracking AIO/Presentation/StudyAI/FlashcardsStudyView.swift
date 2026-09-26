@@ -173,11 +173,11 @@ public struct FlashcardsStudyView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 16, style: .continuous)
-                            .fill(Color(uiColor: .secondarySystemGroupedBackground))
+                            .fill(Color.platformSecondaryGroupedBackground)
                             .shadow(color: Color.black.opacity(0.06), radius: 8, x: 0, y: 4)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                    .stroke(Color(uiColor: .separator), lineWidth: 0.5)
+                                    .stroke(Color.platformSeparator, lineWidth: 0.5)
                             )
 
                         VStack(spacing: 16) {

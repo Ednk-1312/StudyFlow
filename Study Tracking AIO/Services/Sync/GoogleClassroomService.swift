@@ -5,6 +5,9 @@
 
 import Foundation
 import AuthenticationServices
+#if canImport(AppKit)
+import AppKit
+#endif
 
 /// Configuration for the Google OAuth flow. These values are injected rather
 /// than hardcoded so the app build stays honest: without a configured client,
@@ -407,6 +410,14 @@ final class AuthenticationPresentationContextProvider: NSObject, ASWebAuthentica
     // behavior is intentional in that dead path.
     @available(iOS, deprecated: 26.0)
     func presentationAnchor(for session: ASWebAuthenticationSession) -> ASPresentationAnchor {
+        #if os(macOS)
+        // On macOS the anchor is the key NSWindow.
+        if let keyWindow = NSApp.keyWindow {
+            return keyWindow
+        }
+        return NSApp.windows.first
+            ?? NSWindow(contentRect: .zero, styleMask: [], backing: .buffered, defer: false)
+        #else
         let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
         for scene in scenes {
             if let keyWindow = scene.windows.first(where: \.isKeyWindow) {
@@ -414,5 +425,6 @@ final class AuthenticationPresentationContextProvider: NSObject, ASWebAuthentica
             }
         }
         return ASPresentationAnchor()
+        #endif
     }
 }

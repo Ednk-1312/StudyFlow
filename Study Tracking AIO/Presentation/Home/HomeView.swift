@@ -229,12 +229,7 @@ public struct HomeView: View {
                     .accessibilityIdentifier("home.settings")
                 }
             }
-            .sheet(isPresented: $state.isQuickAddPresented) {
-                QuickAddSheet()
-            }
-            .sheet(isPresented: $state.isScanPresented) {
-                ScanAssignmentView()
-            }
+            .modifier(QuickAccessSheets(appState: appState))
         }
     }
 

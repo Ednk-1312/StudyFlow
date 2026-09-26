@@ -69,7 +69,7 @@ public struct ActiveStudySessionView: View {
                 // Circular Timer Display
                 ZStack {
                     Circle()
-                        .stroke(Color(uiColor: .tertiarySystemFill), lineWidth: 12)
+                        .stroke(Color.platformTertiaryFill, lineWidth: 12)
 
                     Circle()
                         .trim(from: 0, to: CGFloat(progress))

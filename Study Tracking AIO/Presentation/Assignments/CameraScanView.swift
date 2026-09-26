@@ -3,6 +3,10 @@
 //  StudyOS
 //
 
+// Camera capture relies on UIImagePickerController, which is iOS-only.
+// macOS uses photo-library import and file import instead.
+#if canImport(UIKit)
+
 import SwiftUI
 import UIKit
 import AVFoundation
@@ -153,3 +157,5 @@ struct CameraScanFlow: View {
         }
     }
 }
+
+#endif // canImport(UIKit)

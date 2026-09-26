@@ -65,9 +65,17 @@ struct Study_Tracking_AIOApp: App {
         WindowGroup {
             MainTabView()
                 .environment(appState)
+#if os(macOS)
+                .sheet(isPresented: $isOnboardingPresented) {
+                    OnboardingView(isPresented: $isOnboardingPresented)
+                        .interactiveDismissDisabled() // first-run: require an explicit choice
+                        .macSheetSizing()
+                }
+#else
                 .fullScreenCover(isPresented: $isOnboardingPresented) {
                     OnboardingView(isPresented: $isOnboardingPresented)
                 }
+#endif
                 .onAppear {
                     if CommandLine.arguments.contains(Self.uiTestResetArgument) {
                         // Fresh-install simulation: onboarding shows, tests dismiss it.
@@ -78,8 +86,16 @@ struct Study_Tracking_AIOApp: App {
                         preferences.hasCompletedOnboarding = true
                     }
                 }
+#if os(macOS)
+                .frame(minWidth: 720, minHeight: 480)
+#endif
         }
         .modelContainer(container)
+#if os(macOS)
+        .commands {
+            MacCommands(appState: appState)
+        }
+#endif
     }
 
     /// Deletes the on-disk SwiftData store so a UI test run starts from a

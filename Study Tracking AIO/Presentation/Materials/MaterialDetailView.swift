@@ -65,7 +65,7 @@ public struct MaterialDetailView: View {
                                         .foregroundStyle(.secondary)
                                         .padding(.horizontal, 6)
                                         .padding(.vertical, 2)
-                                        .background(Color(uiColor: .tertiarySystemFill))
+                                        .background(Color.platformTertiaryFill)
                                         .clipShape(Capsule())
                                 }
                             }
@@ -84,9 +84,9 @@ public struct MaterialDetailView: View {
                             .frame(height: 380)
                             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                     }
-                } else if let uiImage = UIImage(data: data) {
+                } else if let image = PlatformImage(data: data) {
                     Section("Attached Image") {
-                        Image(uiImage: uiImage)
+                        Image(platformImage: image)
                             .resizable()
                             .scaledToFit()
                             .frame(maxHeight: 300)
@@ -174,6 +174,7 @@ public struct MaterialDetailView: View {
     }
 }
 
+#if canImport(UIKit)
 public struct NativePDFView: UIViewRepresentable {
     public let data: Data
 
@@ -195,3 +196,26 @@ public struct NativePDFView: UIViewRepresentable {
         }
     }
 }
+#elseif canImport(AppKit)
+public struct NativePDFView: NSViewRepresentable {
+    public let data: Data
+
+    public init(data: Data) {
+        self.data = data
+    }
+
+    public func makeNSView(context: Context) -> PDFView {
+        let pdfView = PDFView()
+        pdfView.autoScales = true
+        pdfView.displayMode = .singlePageContinuous
+        pdfView.document = PDFDocument(data: data)
+        return pdfView
+    }
+
+    public func updateNSView(_ nsView: PDFView, context: Context) {
+        if nsView.document == nil {
+            nsView.document = PDFDocument(data: data)
+        }
+    }
+}
+#endif // canImport(UIKit)

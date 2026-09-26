@@ -83,11 +83,13 @@ public struct ScanAssignmentView: View {
             }
 
             Section("Select Image") {
+                #if os(iOS)
                 Button {
                     isCameraPresented = true
                 } label: {
                     Label("Take Photo", systemImage: "camera")
                 }
+                #endif
 
                 PhotosPicker(selection: $selectedPhotoItem, matching: .images) {
                     Label("Choose from Photo Library", systemImage: "photo.on.rectangle")
@@ -120,11 +122,13 @@ public struct ScanAssignmentView: View {
             }
         }
         .listStyle(.insetGrouped)
+        #if os(iOS)
         .fullScreenCover(isPresented: $isCameraPresented) {
             CameraScanFlow { image in
                 processImage(image)
             }
         }
+        #endif
     }
 
     // MARK: - Step 2: Confirmation & Edit
@@ -236,18 +240,26 @@ public struct ScanAssignmentView: View {
         defer { isProcessing = false }
 
         if let data = try? await item.loadTransferable(type: Data.self),
-           let uiImage = UIImage(data: data) {
-            processImage(uiImage)
+           let image = PlatformImage(data: data) {
+            processImage(image)
         } else {
             failureMessage = "Couldn't load that photo. Try a different image."
         }
     }
 
-    private func processImage(_ uiImage: UIImage) {
+    private func processImage(_ image: PlatformImage) {
         isProcessing = true
         Task {
             do {
-                let candidate = try await DocumentScannerService.shared.extractAssignment(from: uiImage)
+                guard let cgImage = image.cgImageOrNil else {
+                    await MainActor.run {
+                        failureMessage = "Couldn't read that image. Try a different photo."
+                        isProcessing = false
+                        selectedPhotoItem = nil
+                    }
+                    return
+                }
+                let candidate = try await DocumentScannerService.shared.extractAssignment(from: cgImage)
                 let foundText = !candidate.rawRecognizedText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
                 await MainActor.run {
                     if foundText {

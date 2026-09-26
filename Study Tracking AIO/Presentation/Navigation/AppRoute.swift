@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 public enum AppTab: String, CaseIterable, Identifiable, Hashable {
     case home = "Today"
@@ -13,6 +14,17 @@ public enum AppTab: String, CaseIterable, Identifiable, Hashable {
     case utilities = "Tools"
 
     public var id: String { rawValue }
+
+    /// Optional keyboard shortcut digit for the macOS Go menu (⌘1…⌘5).
+    public var goShortcutKey: KeyEquivalent? {
+        switch self {
+        case .home: return "1"
+        case .assignments: return "2"
+        case .planner: return "3"
+        case .materials: return "4"
+        case .utilities: return "5"
+        }
+    }
 
     public var systemImage: String {
         switch self {

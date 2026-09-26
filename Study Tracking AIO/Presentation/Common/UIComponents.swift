@@ -9,7 +9,8 @@ public extension View {
     /// Adds a Done key above the keyboard so text entry is never a trap:
     /// users can always dismiss the keyboard without killing the app.
     func dismissibleKeyboard() -> some View {
-        toolbar {
+        #if os(iOS)
+        return toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
                 Button("Done") {
@@ -20,6 +21,11 @@ public extension View {
                 }
             }
         }
+        #else
+        // No software keyboard on macOS; the physical keyboard needs no
+        // dismissal affordance.
+        return self
+        #endif
     }
 }
 
@@ -182,7 +188,7 @@ public struct StudyOSErrorBanner: View {
             }
         }
         .padding(12)
-        .background(Color(uiColor: .secondarySystemBackground))
+        .background(Color.platformSecondarySystemBackground)
         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }

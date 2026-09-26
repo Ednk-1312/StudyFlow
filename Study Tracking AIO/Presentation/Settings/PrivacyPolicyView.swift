@@ -163,7 +163,7 @@ public struct PrivacyPolicyView: View {
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .background(Color(.systemGroupedBackground))
+        .background(Color.platformSystemGroupedBackground)
         .navigationTitle("Privacy Policy")
         .navigationBarTitleDisplayMode(.inline)
     }
